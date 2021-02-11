@@ -1,5 +1,13 @@
 # @backstage/plugin-user-settings
 
+## 0.2.6
+
+### Patch Changes
+
+- d872f662d: Use routed tabs to link to every settings page.
+- Updated dependencies [f62e7abe5]
+  - @backstage/core@0.6.2
+
 ## 0.2.5
 
 ### Patch Changes
