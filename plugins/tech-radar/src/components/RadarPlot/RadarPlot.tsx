@@ -68,6 +68,7 @@ const RadarPlot = (props: Props): JSX.Element => {
         {entries.map(entry => (
           <RadarEntry
             key={entry.id}
+            entryId={entry.id}
             x={entry.x || 0}
             y={entry.y || 0}
             color={entry.color || ''}

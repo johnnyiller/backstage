@@ -14,31 +14,4 @@
  * limitations under the License.
  */
 
-import {
-  createPlugin,
-  createRouteRef,
-  createRoutableExtension,
-} from '@backstage/core';
-
-export const rootRouteRef = createRouteRef({
-  title: 'Tech Radar',
-});
-
-export const entryRouteRef = createRouteRef({
-  title: 'Tech Radar Entry',
-  path: 'entry/:id'
-})
-
-export const techRadarPlugin = createPlugin({
-  id: 'tech-radar',
-  routes: {
-    root: rootRouteRef,
-  },
-});
-
-export const TechRadarPage = techRadarPlugin.provide(
-  createRoutableExtension({
-    component: () => import('./components/Routes').then(m => m.Router),
-    mountPoint: rootRouteRef,
-  }),
-);
+export { default } from './RadarEntryTimeline';

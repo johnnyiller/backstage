@@ -20,8 +20,8 @@ export {
   TechRadarPage,
 } from './plugin';
 
-export { RadarPage as Router } from './components/RadarPage';
-
+//export { RadarPage as Router } from './components/RadarPage';
+export { Router } from './components/Routes';
 /**
  * The TypeScript API for configuring Tech Radar.
  */

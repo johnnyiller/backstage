@@ -16,7 +16,7 @@
 
 import React from 'react';
 import { makeStyles, Theme } from '@material-ui/core';
-import { WithLink } from '../../utils/components';
+import { WithEntryLink } from '../../utils/components';
 
 export type Props = {
   x: number;
@@ -25,6 +25,7 @@ export type Props = {
   color: string;
   url?: string;
   moved?: number;
+  entryId: string;
   onMouseEnter?: (event: React.MouseEvent<SVGGElement, MouseEvent>) => void;
   onMouseLeave?: (event: React.MouseEvent<SVGGElement, MouseEvent>) => void;
   onClick?: (event: React.MouseEvent<SVGGElement, MouseEvent>) => void;
@@ -63,8 +64,8 @@ const RadarEntry = (props: Props): JSX.Element => {
   const {
     moved,
     color,
-    url,
     value,
+    entryId,
     x,
     y,
     onMouseEnter,
@@ -82,9 +83,9 @@ const RadarEntry = (props: Props): JSX.Element => {
       onClick={onClick}
       data-testid="radar-entry"
     >
-      <WithLink url={url} className={classes.link}>
+      <WithEntryLink entryId={entryId} className={classes.link}>
         {blip}
-      </WithLink>
+      </WithEntryLink>
       <text y={3} className={classes.text}>
         {value}
       </text>

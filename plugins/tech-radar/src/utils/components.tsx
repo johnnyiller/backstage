@@ -15,10 +15,23 @@
  */
 import React from 'react';
 
+import {
+  Link,
+} from '@material-ui/core';
+
+import { Link as RouterLink, generatePath } from 'react-router-dom';
+import { entryRouteRef } from '../plugin';
+
 type WithLinkProps = {
   url?: string;
   className: string;
   children: React.ReactNode;
+};
+
+type WithEntryLinkProps = {
+  className: string;
+  children: React.ReactNode;
+  entryId: string;
 };
 
 export const WithLink = ({
@@ -33,3 +46,22 @@ export const WithLink = ({
   ) : (
     <>{children}</>
   );
+
+
+export const WithEntryLink = ({
+  entryId,
+  className,
+  children,
+}: WithEntryLinkProps): JSX.Element => {
+  return (
+    <Link 
+      component={RouterLink} 
+      className={className}
+      to={`${generatePath(entryRouteRef.path, {
+        id: entryId!,
+      })}`}
+    >
+      {children}
+    </Link>
+  );
+};
